@@ -1,0 +1,13 @@
+<form class="form" autocomplete="off">
+    <mat-form-field class="full-width">
+      <mat-label>Type a user name</mat-label>
+      <input matInput [(ngModel)]="searchParam" name="mySearchTerm">
+    </mat-form-field>
+    <div class="button-container">
+        <button mat-fab color="primary" class="searchIcon" (click)="search($event)">
+          <mat-icon>search</mat-icon>
+        </button>
+    </div>
+
+    <div><p>{{result}}</p></div>
+  </form>
