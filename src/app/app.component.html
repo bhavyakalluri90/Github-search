@@ -1,0 +1,18 @@
+<div class="toolbar" role="banner">
+    <img width="40"  alt="Angular Logo" src="https://image.flaticon.com/icons/png/512/25/25231.png"/>
+    <span>GitHub User Search</span>
+    <div class="spacer"></div>
+</div>
+<div class="searchBar">
+    <app-search-bar (searchClicked)="onSearchClicked($event)"></app-search-bar>
+</div>
+<div class="resultContent">
+    <app-user-card *ngFor = "let user of userData" [user]="user" ></app-user-card>
+</div>
+<div *ngIf="userData" class="paginationBlock">
+    <mat-paginator [length]="totalPages"
+                    [pageSize]="pageSize"
+              [pageSizeOptions]="[20,40,50,100]"
+              (page)="pageEvent = handlePaginationEvents($event)">
+    </mat-paginator>
+</div>
